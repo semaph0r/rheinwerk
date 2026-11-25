@@ -83,6 +83,7 @@ canvas#gl{position:fixed;inset:0;width:100%;height:100%;display:block}
 .hint{color:var(--dim);font-size:13px}
 #perf{position:fixed;left:50%;top:8px;transform:translateX(-50%);margin:0;padding:6px 10px;background:rgba(0,0,0,.7);color:#bfffbf;font:12px/1.35 ui-monospace,Menlo,Consolas,monospace;border-radius:4px;pointer-events:none;z-index:50;white-space:pre}
 .changelog section{border-top:1px solid var(--line);padding:8px 0}.changelog section.cur h3{color:var(--amber)}.changelog h3{margin:0;font:700 17px 'Barlow Condensed'}.changelog h3 span{font-weight:400;margin-left:6px}.changelog small{color:var(--dim)}.changelog ul{margin:4px 0 0 18px;padding:0;font-size:14px}.changelog li{margin:2px 0}
+.wevent{background:#3a2a10;border:1px solid #8a6a20;border-radius:6px;padding:8px;display:flex;gap:8px;align-items:center}.wevent span{flex:1;font-size:13px}.wevent button{background:#5a4010;color:var(--ink);border:1px solid #a08030;border-radius:4px;padding:4px 8px;cursor:pointer}
 .evbtns{display:flex;flex-wrap:wrap;gap:4px}.evbtns button{background:#2a1c1c;color:var(--ink);border:1px solid #5a2a2a;border-radius:4px;padding:4px 8px;cursor:pointer;font-size:13px}
 #menu{position:fixed;inset:0;background:rgba(0,0,0,.55);display:grid;place-items:center}
 #menu .box{width:min(820px,94vw);max-height:88vh;display:flex;flex-direction:column;background:#10151a;border:1px solid var(--line);border-radius:8px;overflow:hidden}
@@ -149,7 +150,7 @@ input[type=range]{accent-color:var(--amber);width:100%}input[type=checkbox]{acce
   <p><b>Boot:</b> „Lorelei 555 Kajüt“ ist ein fiktives Modell, angelehnt an die typische Klasse 5,5-m-Kajütboote mit Außenborder (LüA ≈ 5,8 m, B 2,29 m, Tiefgang 0,42 m, 80–115 PS).</p>
   <p class="hint">Engine: three.js (WebGL 2). Aufrüstpfad: Shader sind modular (Himmel/Wolken, Wasser, Gelände, Fassaden) und lassen sich auf WebGPU/TSL portieren.</p>
 </template>
-<script src="bundle.js"></script>
+<script src="bundle.js?v=0.13.1"></script>
 <noscript>JavaScript wird benötigt.</noscript>
 </body>
 </html>

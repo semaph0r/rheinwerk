@@ -1,8 +1,20 @@
 # Änderungsprotokoll – Rheinwerk Bootssimulator
 
-Aktuelle Version: **0.13.0**
+Aktuelle Version: **0.13.1**
 
 Versionierung nach Semantic Versioning (vor 1.0: zweite Stelle = neue Funktionsrunde, dritte Stelle = Korrekturen).
+
+## 0.13.1 – Fehlerbehebungen: Regen/Wetter, Ladezeit, Ufer, Kartentiefen; neues WSP-Streifenboot
+_2026-11-25_
+
+- Behoben: Gewitterböe löste sich jedes Bild neu aus – Statusmeldungen wurden geflutet und das Wetterereignis endete nie, sodass Wettereinstellungen wirkungslos blieben
+- Aktives Wetterereignis (Böe, Nebelbank) wird im Reiter „Wetter & Zeit“ mit Restdauer angezeigt und lässt sich beenden; jede Änderung am Wetter beendet es (Einstellungen haben Vorrang)
+- Gleichlautende Statusmeldungen innerhalb von 8 s werden zusammengefasst (×n) statt gestapelt
+- Ladezeit etwa halbiert: Wolkenrauschen mit Tabellen statt Einzelberechnung (4,7 s → 0,5 s), Seekarte ohne riesigen Canvas-Pfad (7,4 s → 0,3 s), alle großen Dateien werden gleichzeitig geladen, Shader werden während des Ladens übersetzt (kein Ruckeln beim ersten Bild); Ladephasen in der Konsole
+- Z-Fighting an den Ufern: präziser Tiefenpuffer (Reversed-Z mit 32-bit-Gleitkomma-Tiefe, Rückfall auf klassisch ohne EXT_clip_control; abschaltbar unter Grafik), Wasserfläche mit Polygon-Offset, Ufer-Geländeknoten mindestens 0,2 m über dem Wasserspiegel
+- Kartentiefen exakt: Gewässersohle liegt überall im Wasser genau auf Wasserspiegel (MW) minus Kartentiefe – auch am Ufer und in beide Richtungen (vorher nur abgesenkt, Uferknoten ausgelassen); Echolot, Anker und Grundberührung verwenden die Kartentiefe (vorher Gelände minus 0,35 m Geberversatz)
+- Neues Streifenboot „WSP Koblenz 1“ nach dem Vorbild WSP 3 (RLP): dunkelblauer Knickspantrumpf mit hoher Bug- und Heckschanz, neongelbe Chevrons, Scheuerleisten-Raster, breite geneigte Bugfront, Steuerhaus mit geneigter Frontscheibe, Bügelmast mit Lüftungslamellen und Blaulichtern, Radarträger, Kuppelantennen, Suchscheinwerfer, Leiter, Davit, Rettungsringe, Badeplattform mit Treppen, Bundesflagge (vereinfacht, ohne Landeswappen)
+- Sprachausgabe: beste deutsche Browser-Stimme wird automatisch bevorzugt (Edge „Natural“, Google, macOS „Premium/Erweitert“), Stimmauswahl mit Hörprobe unter „Verkehr“; neuronale Stimmen ohne künstliche Tonhöhenverstellung
 
 ## 0.13.0 – Performance, Schritt 1: Zeichenaufrufe, Detailstufen, dynamische Auflösung
 _2026-11-25_
