@@ -1,8 +1,19 @@
 # Änderungsprotokoll – Rheinwerk Bootssimulator
 
-Aktuelle Version: **0.12.0**
+Aktuelle Version: **0.13.0**
 
 Versionierung nach Semantic Versioning (vor 1.0: zweite Stelle = neue Funktionsrunde, dritte Stelle = Korrekturen).
+
+## 0.13.0 – Performance, Schritt 1: Zeichenaufrufe, Detailstufen, dynamische Auflösung
+_2026-11-25_
+
+- Leistungsanzeige mit Taste F8: Bildrate, Frame-Zeit, Simulation, Rendern, Zeichenaufrufe, Dreiecke, Auflösung
+- Statische Teile werden zusammengefasst (Schifffahrtszeichen, km-Tafeln, Schleusenbauwerke, Torflügel, Signale, Berufsschiffe, Einsatzboote): Zeichenaufrufe im Hauptbild von ~1 710 auf ~830 halbiert
+- Schwimmstege mit Detailstufe: in der Nähe einzeln schwimmend, weiter weg je Bereich als ein Modell
+- Wasserspiegelung ohne Kleinteile (Tafeln, Zeichen, Laternen, Treibgut): Zeichenaufrufe der Spiegelung von ~1 650 auf ~650
+- Straßenlaternen mit Detailstufe (volles Modell nur für die nächsten 10 bis 90 m, sonst vereinfachter Kopf; Schatten nur vom Mast): ~1,3 Mio. auf ~0,2 Mio. Dreiecke
+- Dynamische Auflösung mit Ziel-Bildrate (30/45/60 fps); bei knapper Leistung Spiegelung und Schatten nur jedes zweite Bild
+- Neue Grafik-Einstellungen: dynamische Auflösung, Ziel-Bildrate, Spiegelung jedes 2. Bild
 
 ## 0.12.0 – Versionierung und Änderungsprotokoll
 _2026-11-25_
