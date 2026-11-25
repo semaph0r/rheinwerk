@@ -1,8 +1,17 @@
 # Änderungsprotokoll – Rheinwerk Bootssimulator
 
-Aktuelle Version: **0.13.1**
+Aktuelle Version: **0.14.0**
 
 Versionierung nach Semantic Versioning (vor 1.0: zweite Stelle = neue Funktionsrunde, dritte Stelle = Korrekturen).
+
+## 0.14.0 – Neuronale Sprachausgabe (Piper) mit Funk- und Megafonklang
+_2026-11-25_
+
+- Neue Einstellung unter Verkehr → „Neuronale Stimme“: Piper „Thorsten“ (männlich, hohe Qualität) oder zusätzlich „Kerstin“ (weiblich) – natürliche Sprache statt Browser-Stimme
+- Läuft vollständig im Browser in einem Hintergrund-Thread (Web Worker): keine Ruckler im Spiel; Funksprüche werden schon beim Eintreffen berechnet und starten ohne Verzögerung
+- Klangformung über WebAudio: Funk im UKW-Sprachband (300–3000 Hz) mit Übersteuerung bei schwachem Empfang, Außenlautsprecher/Megafon mit Hornresonanz und Echo vom Ufer; Funkstellen unterscheiden sich in Tempo und Stimmlage
+- Einmaliger Download beim Einschalten (≈ 90 MB mit Thorsten, ≈ 155 MB mit beiden Stimmen) mit Fortschrittsanzeige; danach im Browser gespeichert, Speicher löschbar
+- Rückfall auf die Browser-Stimme, wenn die neuronale Stimme nicht verfügbar ist (z. B. im Offline-Paket über file://)
 
 ## 0.13.1 – Fehlerbehebungen: Regen/Wetter, Ladezeit, Ufer, Kartentiefen; neues WSP-Streifenboot
 _2026-11-25_
